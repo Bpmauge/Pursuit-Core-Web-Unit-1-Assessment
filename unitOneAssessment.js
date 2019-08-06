@@ -32,8 +32,9 @@ const numberOfDigits = (num) => {
 // Write a function called disemvowel that removes all of the vowels from a string.
 // Treat y as a consonant, not a vowel
 
+//neither attempt works
 
-//come back
+// this gets me undefined
 // const disemvowel = (string) => {
 //   let array = string.split('');
 //     array.forEach((currentValue) => {
@@ -43,18 +44,19 @@ const numberOfDigits = (num) => {
 //     })
 //   }
 
-const disemvowel = (string) => {
-   array = string.split('');
-  for(let i = 0; i < array.length; i++){
-    if(string[i] === 'a' && 'e' && 'i' && 'o' && 'u' && 'y'){
-      return
-    } else{return array += string[i]
-    }//return array.join('')
-  }
-}
+//this gets me 'h'
+// const disemvowel = (string) => {
+//    string = string.split('');
+//   for(let i = 0; i < string.length; i++){
+//     if(string[i] === 'a' && 'e' && 'i' && 'o' && 'u' && 'y'){
+//       return
+//     } else{
+//       return string[i]}//return array.join('')
+//   }
+// }
 
 // Uncomment out the next line to test your solution
-runQ3Tests()
+//runQ3Tests()
 
 // Question Four:
 // Write a function called secondSmallest that returns the second smallest number in an array
@@ -128,7 +130,7 @@ class Day {
 // Make a function called getAllDayDescriptions that takes in an array of Day objects and returns an array of their descriptions.  Use a higher-ordered function (e.g map, filter, reduce, every, sort) in your implementation.
 // The output should be in the same order as the input
 
-//come back
+// this gets me n array of null
 const getAllDayDescriptions = (array) =>
   array.map((currentValue) => {
      return currentValue.getDescription()
@@ -136,7 +138,7 @@ const getAllDayDescriptions = (array) =>
 
 
 // Uncomment out the next line to test your solution
-//runQ7Tests()
+runQ7Tests()
 
 
 

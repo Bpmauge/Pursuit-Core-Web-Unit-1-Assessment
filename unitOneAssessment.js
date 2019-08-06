@@ -4,32 +4,67 @@ let assert = require('assert')
 
 // Write a function called isOdd that returns whether or not a number is odd.
 // If something that is not a number is passed in, return false.
-
+const isOdd = (num) => {
+  if (isNaN(num) || num % 2 === 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 // Uncomment out the next line to test your solution
-// runQ1Tests()
+//runQ1Tests()
 
 
 // Question Two:
 
 // Write a function called numberOfDigits that returns how many digits are in a given number
+const numberOfDigits = (num) => {
+  num = num.toString()
+  return num.length
+}
 
 // Uncomment out the next line to test your solution
-// runQ2Tests()
+//runQ2Tests()
 
 // Question Three:
 
 // Write a function called disemvowel that removes all of the vowels from a string.
 // Treat y as a consonant, not a vowel
 
+
+//come back
+// const disemvowel = (string) => {
+//   let array = string.split('');
+//     array.forEach((currentValue) => {
+//       if (currentValue !== 'a' && 'e' && 'i' && 'o' && 'u' && 'y'){
+//         return array.push(currentValue);
+//       } return array
+//     })
+//   }
+
+const disemvowel = (string) => {
+   array = string.split('');
+  for(let i = 0; i < array.length; i++){
+    if(string[i] === 'a' && 'e' && 'i' && 'o' && 'u' && 'y'){
+      return
+    } else{return array += string[i]
+    }//return array.join('')
+  }
+}
+
 // Uncomment out the next line to test your solution
-// runQ3Tests()
+runQ3Tests()
 
 // Question Four:
 // Write a function called secondSmallest that returns the second smallest number in an array
+const secondSmallest = (array) => {
+  array.sort((a,b) => a-b);
+  return array[1]
+}
 
 // Uncomment out the next line to test your solution
-// runQ4Tests()
+//runQ4Tests()
 
 // Question Five:
 // Write a function called getLocations that takes in an array of objects that look like the array below,
@@ -37,22 +72,36 @@ let assert = require('assert')
 // The output should be in the same order as the input
 
 // Sample input:
-// [{location: "Algeria", population: 41}, {location: "Belize", population: 0.4}, {location: "China", population: 1386}, {location: "Denmark", population: 6}]
+//let input = [{location: "Algeria", population: 41}, {location: "Belize", population: 0.4}, {location: "China", population: 1386}, {location: "Denmark", population: 6}]
 
 // Sample output:
 // ["Algeria", "Belize", "China", "Denmark"]
-
+const getLocations = (array) => array.map((input) => {
+  for(key of array){
+   return (input.location)
+ }
+})
+//console.log(key)
 // Uncomment out the next line to test your solution
-// runQ5Tests()
+//runQ5Tests()
 
 
 // Question Six:
 
 // Write a function called onlyOddStrings that takes in an array of strings as input and returns an array that only includes strings with an odd number of characters
 // Your function should use a higher-ordered function (e.g map, filter, reduce, every, sort) in its implementation
+const onlyOddStrings = (array) =>
+    array.filter((string) => {
+     for(let i = 0; i < array.length; i++) {
+       if(string.length % 2 !== 0){
+       return true
+     }
+     }
+   })
+
 
 // Uncomment out the next line to test your solution
-// runQ6Tests()
+//runQ6Tests()
 
 
 // Question Seven:
@@ -65,13 +114,29 @@ let assert = require('assert')
 // Example
 // let myDay = Day(80, "sunny")
 // myDay.getDescription() // returns "It is 80 degrees and sunny"
+class Day {
+  constructor(temperature, weather) {
+    this.temperature = temperature;
+    this.weather = weather;
+  }
+  getDescription() {
+    console.log(`It is ${this.temperature} degrees and ${this.weather}`)
+  }
+}
 
 //b.
 // Make a function called getAllDayDescriptions that takes in an array of Day objects and returns an array of their descriptions.  Use a higher-ordered function (e.g map, filter, reduce, every, sort) in your implementation.
 // The output should be in the same order as the input
 
+//come back
+const getAllDayDescriptions = (array) =>
+  array.map((currentValue) => {
+     return currentValue.getDescription()
+  })
+
+
 // Uncomment out the next line to test your solution
-// runQ7Tests()
+//runQ7Tests()
 
 
 

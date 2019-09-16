@@ -51,17 +51,42 @@ let assert = require('assert')
 //push them from the string
 //return string
 
-let str = "How are you doing today"
+//let str = "How are you doing today"
+//
+// const disemvowel = str => str.forEach(word => !word.includes("a","e","i","o","u"))
 
-const disemvowel = str => str.forEach(word => !word.includes("a","e","i","o","u"))
 
 
+
+//*********REVIEW *******
+const disemvowel = (str) => {
+  let clearStr = '';
+  for(let i = 0; i < str.length; i++) {
+    let lower = str[i].toLowerCase()
+    if (lower !== 'a' || lower !== 'e' || lower !== 'i' || lower !== 'o' || lower !== 'u') {
+
+    }else {
+      clearStr += str[i]
+    }
+  }
+  return clearStr
+}
+console.log(disemvowel('Hello'))
 // Uncomment out the next line to test your solution
-console.log(disemvowel(str))
+// console.log(disemvowel(str))
 
 
 
-
+const devowelizeRecursively = (str) => {
+  if (str.length === 0) {
+    return ""
+  }
+  c = str[0];
+  if(isVowel(c)) {
+    c = ""
+  }
+  return c + devowelizeRecursively(str.slice(1))
+}
 
 
 // Question Four:
@@ -171,7 +196,7 @@ console.log(disemvowel(str))
 // let myDay = Day(80, "sunny")
 // myDay.getDescription() // returns "It is 80 degrees and sunny"
 
-//b. COULDNT FIGURE OUT 
+//b. COULDNT FIGURE OUT
 // Make a function called getAllDayDescriptions that takes in an array of Day objects and returns an array of their descriptions.  Use a higher-ordered function (e.g map, filter, reduce, every, sort) in your implementation.
 // The output should be in the same order as the input
 
